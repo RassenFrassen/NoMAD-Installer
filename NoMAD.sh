@@ -19,7 +19,7 @@ loggedInUserPid=$(python -c 'from SystemConfiguration import SCDynamicStoreCopyC
 
 launchctlCmd=$(python -c 'import platform; from distutils.version import StrictVersion as SV; print("asuser") if SV(platform.mac_ver()[0]) >= SV("10.10") else "bsexec"')
 
-packageDownloadUrl="https://nomad.menu/download/NoMAD.pkg"
+packageDownloadUrl="https://files.nomad.menu/NoMAD.pkg"
 
 log "Downloading NoMAD.pkg..."
 /usr/bin/curl -s $packageDownloadUrl -o "$tempDir/NoMAD.pkg"
