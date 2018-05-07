@@ -15,11 +15,15 @@ cleanUp() {
 
 trap cleanUp exit
 
-loggedInUserPid=$(python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; username = SCDynamicStoreCopyConsoleUser(None, None, None)[1]; print(username);')
+if [[ -z "$4" ]]; then
+    packageDownloadUrl="https://files.nomad.menu/NoMAD.pkg"
+else
+    packageDownloadUrl="$4"
+fi
 
-launchctlCmd=$(python -c 'import platform; from distutils.version import StrictVersion as SV; print("asuser") if SV(platform.mac_ver()[0]) >= SV("10.10") else "bsexec"')
+loggedInUserPid=$(/usr/bin/python -c 'from SystemConfiguration import SCDynamicStoreCopyConsoleUser; username = SCDynamicStoreCopyConsoleUser(None, None, None)[1]; print(username);')
 
-packageDownloadUrl="https://files.nomad.menu/NoMAD.pkg"
+launchctlCmd=$(/usr/bin/python -c 'import platform; from distutils.version import StrictVersion as SV; print("asuser") if SV(platform.mac_ver()[0]) >= SV("10.10") else "bsexec"')
 
 log "Downloading NoMAD.pkg..."
 /usr/bin/curl -s $packageDownloadUrl -o "$tempDir/NoMAD.pkg"
