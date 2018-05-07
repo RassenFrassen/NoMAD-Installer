@@ -14,7 +14,7 @@ To run locally:
 
 The latest version of the NoMAD package will be downloaded, installed and then a LaunchAgent will be written to `/Library/LaunchAgents` and loaded.
 
-* Link to NoMAD package: [https://nomad.menu/download/NoMAD.pkg](https://nomad.menu/download/NoMAD.pkg)
+* Link to NoMAD package: [https://files.nomad.menu/NoMAD.pkg](https://files.nomad.menu/NoMAD.pkg)
 * Link to LaunchAgent documentation: [https://nomad.menu/help-center/automatically-launching-nomad/](https://nomad.menu/help-center/automatically-launching-nomad/)
 
 ## Configuration and Management
