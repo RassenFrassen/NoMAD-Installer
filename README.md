@@ -20,3 +20,5 @@ The latest version of the NoMAD package will be downloaded, installed and then a
 ## Configuration and Management
 
 Learn more about managing NoMAD at [https://nomad.menu/help-center/](https://nomad.menu/help-center/).
+
+If the download URL for NoMAD changes you may use a script parameter to override the hard coded value. For the NoMAD script in your policy, enter the full URL you wish to use in the **"Parameter 4"** field (You may rename the label for this parameter to something more identifiable by going to `Settings > Computer Management > Scripts > the NoMAD script > Options`).
